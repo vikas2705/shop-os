@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home'; 
-import About from './pages/About';
+import Home from './feature/home/index';
+import MyStore from './feature/myStore/index';
+import Workflows from './feature/workflows/index';
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
         <p className="text-xl text-red-500">Hello world</p>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/workflows" element={<Workflows />} />
+          <Route path="/myStore" element={<MyStore />} />
         </Routes>
       </div>
     </Router>
