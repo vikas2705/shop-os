@@ -22,7 +22,7 @@ const sideBarItems = [
 const Sidebar: React.FC = () => {
   const navigate = useNavigate()
   return (
-    <div className="fixed bg-white h-full flex items-center flex-col w-[80px] border-r-[1px]">
+    <div className="fixed bg-gray-100 h-full flex items-center flex-col w-[80px] border-r-[1px]">
       <img
         src="/Union.png"
         alt="Dashboard"
@@ -35,7 +35,7 @@ const Sidebar: React.FC = () => {
             key={index}
             className="hover:cursor-pointer hover:bg-slate-200 p-3 rounded-lg"
             onClick={() => {
-              navigate(items.navigateTo)
+              navigate(items.navigateTo);
             }}
           >
             {items.icon}
@@ -43,7 +43,7 @@ const Sidebar: React.FC = () => {
         ))}
       </ul>
     </div>
-  )
+  );
 }
 
 export default Sidebar
