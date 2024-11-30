@@ -18,7 +18,7 @@ const CardList: React.FC = () => {
                     <span
                         key={index}
                         className={`${selectedCategory === index ? "bg-[#0F172A] text-white" : "border-[#E5E5E5] border"} 
-                            cursor-pointer rounded-full px-6 py-2 min-w-max`}
+                            hover:shadow-md cursor-pointer rounded-full px-6 py-2 min-w-max`}
                         onClick={() => setSelectedCategory(index)}
                     >
                         {category}

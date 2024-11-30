@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-// import Card from "./components/Card/Card";
 import LeftArrow from "../../assets/icons/leftArrow.svg";
+import { agentCardData, agentCategories } from "../../constants/mockData";
 
 interface CardData {
   id: number;
@@ -8,108 +8,6 @@ interface CardData {
   description: string;
   imageUrl: string;
 }
-
-const cardData: CardData[] = [
-  {
-    id: 1,
-    title: "Background Remover",
-    description: "Remove backgrounds in seconds.",
-    imageUrl: "/agents1.png", // Placeholder image
-  },
-  {
-    id: 2,
-    title: "Background Changer",
-    description: "Changes background of the image in seconds.",
-    imageUrl: "/agents1.png", // Placeholder image
-  },
-  {
-    id: 3,
-    title: "Video Generator",
-    description: "Transform images into captivating videos in seconds.",
-    imageUrl: "/agents1.png", // Placeholder image
-  },
-  {
-    id: 4,
-    title: "Description Generator",
-    description: "Remove backgrounds in seconds.",
-    imageUrl: "/agents1.png", // Placeholder image
-  },
-  {
-    id: 5,
-    title: "Smart Crop",
-    description: "Automatically crop videos for differentaspect ratios.",
-    imageUrl: "/agents1.png", // Placeholder image
-  },
-  {
-    id: 6,
-    title: "Avatars",
-    description: "Choose or create your own avatars to promote products",
-    imageUrl: "/agents1.png", // Placeholder image
-  },
-  {
-    id: 7,
-    title: "Video Editor",
-    description: "Transform images into captivating videos in seconds.",
-    imageUrl: "/agents1.png", // Placeholder image
-  },
-  {
-    id: 8,
-    title: "AI Shadows",
-    description: "Remove backgrounds in seconds.",
-    imageUrl: "/agents1.png", // Placeholder image
-  },
-  {
-    id: 9,
-    title: "Background Remover",
-    description: "Remove backgrounds in seconds.",
-    imageUrl: "/agents1.png", // Placeholder image
-  },
-  {
-    id: 10,
-    title: "Background Changer",
-    description: "Changes background of the image in seconds.",
-    imageUrl: "/agents1.png", // Placeholder image
-  },
-  {
-    id: 11,
-    title: "Video Generator",
-    description: "Transform images into captivating videos in seconds.",
-    imageUrl: "/agents1.png", // Placeholder image
-  },
-  {
-    id: 12,
-    title: "Description Generator",
-    description: "Remove backgrounds in seconds.",
-    imageUrl: "/agents1.png", // Placeholder image
-  },
-//   {
-//     id: 13,
-//     title: "Smart Crop",
-//     description: "Automatically crop videos for differentaspect ratios.",
-//     imageUrl: "/agents1.png", // Placeholder image
-//   },
-//   {
-//     id: 14,
-//     title: "Avatars",
-//     description: "Choose or create your own avatars to promote products",
-//     imageUrl: "/agents1.png", // Placeholder image
-//   },
-//   {
-//     id: 15,
-//     title: "Video Editor",
-//     description: "Transform images into captivating videos in seconds.",
-//     imageUrl: "/agents1.png", // Placeholder image
-//   },
-//   {
-//     id: 16,
-//     title: "AI Shadows",
-//     description: "Remove backgrounds in seconds.",
-//     imageUrl: "/agents1.png", // Placeholder image
-//   },
-  // Add more cards as needed
-];
-
-const categories = ["All", "Text", "Image", "Video", "3D", "Voice", "Misc"];
 
 const Card: React.FC<CardData> = ({
   title,
@@ -131,30 +29,26 @@ const AgentList: React.FC = () => {
   return (
     <div className="flex flex-col gap-3 p-6">
       <div className="flex gap-5">
-        <img src={LeftArrow} onClick={()=>{history.back()}} />
+        <img className='hover:bg-slate-200 p-3 rounded-lg' src={LeftArrow} onClick={() => { history.back() }} />
         <h2 className="text-3xl font-semibold">Agents</h2>
       </div>
       <div className="flex items-center gap-3 pb-2">
-        {categories.map((category, index) => (
+        {agentCategories.map((category, index) => (
           <span
-            className={`${
-              selectedCategory === index
-                ? "bg-[#0F172A] text-white"
-                : "border-[#E5E5E5] border"
-            } cursor-pointer rounded-full px-[20px] py-[5px]`}
+            className={`${selectedCategory === index
+              ? "bg-[#0F172A] text-white"
+              : "border-[#E5E5E5] border"
+              } hover:shadow-md cursor-pointer rounded-full px-[20px] py-[5px]`}
             onClick={() => setSelectedCategory(index)}
           >
             {category}
           </span>
         ))}
       </div>
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-      
-      </div> */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {cardData.map((card) => (
+        {agentCardData.map((card) => (
           <Card
-          id={card.id}
+            id={card.id}
             key={card.id}
             title={card.title}
             description={card.description}
