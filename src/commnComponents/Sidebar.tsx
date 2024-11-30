@@ -1,5 +1,4 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
 import StoreIcon from "@mui/icons-material/Store";
 import AddHomeIcon from "@mui/icons-material/AddHome";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
@@ -19,7 +18,6 @@ const Sidebar: React.FC = () => {
         <li>
           <StoreIcon />
         </li>
-        {/* Add more buttons here as necessary */}
         <li>
           <AccountTreeIcon />
         </li>
