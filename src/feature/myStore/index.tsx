@@ -12,6 +12,9 @@ type Props = {}
 
 export default function index({}: Props) {
   const navigate = useNavigate()
+  const handleBack = () => {
+    navigate("/")
+  }
   const imageCardData: ImageCardData[] = [
     {
       image: img1,
@@ -30,7 +33,10 @@ export default function index({}: Props) {
     <div className="flex justify-center items-centerx">
       <div className="w-[750px] p-5">
         <div className="flex items-center w-full">
-          <div className="text-3xl">
+          <div
+            className="hover:cursor-pointer hover:bg-slate-200 p-2 rounded-lg"
+            onClick={handleBack}
+          >
             <ArrowBackIcon />
           </div>
           <h1 className="text-3xl font-semibold pl-5">My Stores</h1>
@@ -64,8 +70,11 @@ export default function index({}: Props) {
         </div>
 
         <div className="flex justify-center items-center mt-5">
-          <button className="bg-black text-white px-5 py-2 rounded-full flex justify-center items-center gap-2"
-          onClick={()=>{ navigate("/create-store")}}
+          <button
+            className="bg-black text-white px-5 py-2 rounded-full flex justify-center items-center gap-2"
+            onClick={() => {
+              navigate("/create-store")
+            }}
           >
             <AddCircleOutlineIcon />
             Create Store
