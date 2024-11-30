@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Sidebar />
 
       {/* Main Content */}
-      <div className="gap-1 w-full bg-gray-100 p-6">{children}</div>
+      <div className="gap-1 w-full bg-gray-100 px-[200px]">{children}</div>
     </div>
   );
 };
