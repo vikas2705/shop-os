@@ -42,7 +42,7 @@ export default function index({}: Props) {
           <h1 className="text-3xl font-semibold pl-5">My Stores</h1>
         </div>
 
-        <div className="bg-[#f6f5f4] my-[50px] rounded-lg p-3">
+        <div className="bg-[#f6f5f4] my-5 rounded-lg p-3">
           <h1 className="text-2xl font-semibold">Generate Store</h1>
           <div className="mt-2 text-lg font-medium text text-[#808080]">
             <p>
