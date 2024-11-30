@@ -30,7 +30,7 @@ export default function index({}: Props) {
     },
   ]
   return (
-    <div className="flex justify-center items-centerx">
+    <div className="flex justify-center items-center">
       <div className="w-[750px] p-5">
         <div className="flex items-center w-full">
           <div
