@@ -27,6 +27,7 @@ const Sidebar: React.FC = () => {
         src="/Union.png"
         alt="Dashboard"
         className="mt-4 rounded block text-left w-11 h-11"
+        onClick={() => navigate('/')}
       />
       <ul className="space-y-4 mt-80">
         {sideBarItems.map((items, index) => (
