@@ -20,7 +20,7 @@ const BaseHome = () => {
         <div className="flex gap-5 mt-4">
           <button
             className="flex items-center border shadow-md text-sm font-normal border-[#E5E5E5] py-2 px-3 rounded-[20px] hover:bg-[#f0f9ff] focus:outline-none"
-            onClick={() => navigate("/upload")}
+            onClick={() => navigate("/create-store")}
           >
             <img src="/Fileupload.png" />
             Upload

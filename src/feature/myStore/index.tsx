@@ -2,6 +2,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack"
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline"
 import img1 from "../../assets/images/tshirt.jpeg"
 import ImageCard from "./components/ImageCard"
+import { useNavigate } from "react-router-dom"
 
 export type ImageCardData = {
   image: string
@@ -10,6 +11,7 @@ export type ImageCardData = {
 type Props = {}
 
 export default function index({}: Props) {
+  const navigate = useNavigate()
   const imageCardData: ImageCardData[] = [
     {
       image: img1,
@@ -62,7 +64,9 @@ export default function index({}: Props) {
         </div>
 
         <div className="flex justify-center items-center mt-5">
-          <button className="bg-black text-white px-5 py-2 rounded-full flex justify-center items-center gap-2">
+          <button className="bg-black text-white px-5 py-2 rounded-full flex justify-center items-center gap-2"
+          onClick={()=>{ navigate("/create-store")}}
+          >
             <AddCircleOutlineIcon />
             Create Store
           </button>
