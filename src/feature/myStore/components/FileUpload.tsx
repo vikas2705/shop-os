@@ -26,6 +26,9 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
       if (onFileSelect) onFileSelect(files)
     }
   }
+const openGoogleDrive = () => {
+  window.open("https://drive.google.com", "_blank");
+};
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files
@@ -41,7 +44,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
       console.log("Uploading files:", selectedFiles)
     }
   }
-
+ console.log("selectedFiles", selectedFiles);
   return (
     <div className=" rounded-xl mx-auto">
       <div
@@ -81,7 +84,10 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
         </div>
       )}
       <div className="flex flex-col mt-5 w-full gap-4 sm:flex-row ">
-        <button className="flex items-center justify-center gap-1 text-black border border-[#E5E5E5] p-3 rounded-xl h-[70px] sm:w-1/3 w-full">
+        <button
+          className="flex items-center justify-center gap-1 text-black border border-[#E5E5E5] p-3 rounded-xl h-[70px] sm:w-1/3 w-full"
+          onClick={openGoogleDrive}
+        >
           <AddToDriveIcon />
           Google Drive
         </button>
@@ -101,7 +107,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
         Upload Files
       </button>
     </div>
-  )
+  );
 }
 
 export default FileUpload
