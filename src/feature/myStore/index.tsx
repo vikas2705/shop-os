@@ -1,8 +1,8 @@
-import ArrowBackIcon from "@mui/icons-material/ArrowBack"
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline"
 import img1 from "../../assets/images/tshirt.jpeg"
 import ImageCard from "./components/ImageCard"
 import { useNavigate } from "react-router-dom"
+import LeftArrow from '../../assets/icons/leftArrow.svg';
 
 export type ImageCardData = {
   image: string
@@ -10,11 +10,9 @@ export type ImageCardData = {
 }
 type Props = {}
 
-export default function index({}: Props) {
+export default function index({ }: Props) {
   const navigate = useNavigate()
-  const handleBack = () => {
-    navigate("/")
-  }
+
   const imageCardData: ImageCardData[] = [
     {
       image: img1,
@@ -30,19 +28,14 @@ export default function index({}: Props) {
     },
   ]
   return (
-    <div className="flex justify-center items-center">
-      <div className="w-[750px] p-5">
-        <div className="flex items-center w-full">
-          <div
-            className="hover:cursor-pointer hover:bg-slate-200 p-2 rounded-lg"
-            onClick={handleBack}
-          >
-            <ArrowBackIcon />
-          </div>
-          <h1 className="text-3xl font-semibold pl-5">My Stores</h1>
+    <div className="flex flex-col gap-3 w-full overflow-x-hidden">
+      <div className="p-5">
+        <div className="flex gap-5 items-center">
+          <img src={LeftArrow} className="hover:bg-slate-200 p-3 rounded-lg" alt="Left Arrow" onClick={() => history.back()} />
+          <h2 className="text-3xl font-semibold">My Store</h2>
         </div>
 
-        <div className="bg-[#f6f5f4] my-5 rounded-lg p-3">
+        <div className="bg-[#f6f5f4] my-5 rounded-lg p-6">
           <h1 className="text-2xl font-semibold">Generate Store</h1>
           <div className="mt-2 text-lg font-medium text text-[#808080]">
             <p>
@@ -81,6 +74,6 @@ export default function index({}: Props) {
           </button>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
